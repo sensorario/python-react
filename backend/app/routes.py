@@ -4,10 +4,18 @@ from app.schemas import Contact
 
 router = APIRouter()
 
+# Memoria temporanea
+contacts: list[Contact] = []
+id_counter = 1
+
 @router.get("/contacts")
 def list_contacts():
-    return [{"id": 1, "name": "Mario Rossi", "email": "mario@example.com"}]
+    return contacts
 
 @router.post("/contacts")
 def create_contact(contact: Contact):
-    return {"message": "Contatto creato", "data": contact}
+    global id_counter
+    contact.id = id_counter
+    contacts.append(contact)
+    id_counter += 1
+    return contact
