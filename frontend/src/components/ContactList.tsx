@@ -1,7 +1,9 @@
 export default function ContactList({
   contacts,
+  deleteContact,
 }: {
   contacts: { name: string; email: string; id: string }[];
+  deleteContact: (id: string) => void;
 }) {
   return (
     <div>
@@ -12,7 +14,8 @@ export default function ContactList({
         <ul>
           {contacts.map((c: { name: string; email: string; id: string }) => (
             <li key={c.id}>
-              <strong>{c.name}</strong> — {c.email}
+              <strong>{c.name}</strong> — {c.email}{" "}
+              <button onClick={() => deleteContact(c.id)}>DELETE</button>
             </li>
           ))}
         </ul>

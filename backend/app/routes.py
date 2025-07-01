@@ -22,3 +22,8 @@ def create_contact(contact: Contact) -> Contact:
     contacts.append(contact)
     id_counter += 1
     return contact
+
+@router.delete("/contacts/{id}")
+def delete_contact(id: int) -> None:
+    global contacts
+    contacts = [contact for contact in contacts if contact.id != id]

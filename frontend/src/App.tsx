@@ -21,11 +21,23 @@ function App() {
 
   if (error) return <p>Errore: {error}</p>;
 
+  const deleteContact = (id: string) => {
+    fetch(`http://localhost:8000/contacts/${id}`, { method: "DELETE" })
+      .then((res) => {
+        if (!res.ok) throw new Error("Errore nella cancellazione del contatto");
+        return res.json();
+      })
+      .then(() =>
+        setContacts(contacts.filter((c: { id: string }) => c.id !== id)),
+      )
+      .catch((err) => setError(err.message));
+  };
+
   return (
     <>
       <h1>Vite + React</h1>
       <p>Hello World!</p>
-      <ContactList contacts={contacts} />
+      <ContactList contacts={contacts} deleteContact={deleteContact} />
       <AddContactForm onContactSaved={() => doSomething()} />
     </>
   );
