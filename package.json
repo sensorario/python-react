@@ -1,0 +1,32 @@
+{
+  "name": "python-react",
+  "version": "1.0.0",
+  "description": "Applicazione full-stack con FastAPI e React per la gestione di una rubrica contatti",
+  "main": "index.js",
+  "scripts": {
+    "release": "semantic-release",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rubrica",
+    "fastapi",
+    "react",
+    "semantic-release"
+  ],
+  "author": "Simone Gentili <sensorario@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sensorario/python-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sensorario/python-react/issues"
+  },
+  "type": "commonjs",
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "semantic-release": "^24.2.6"
+  },
+  "homepage": "https://github.com/sensorario/python-react#readme"
+}
