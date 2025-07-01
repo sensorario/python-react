@@ -1,0 +1,23 @@
+[project]
+name = "rubrica-backend"
+version = "0.1.0"
+description = "API FastAPI per rubrica contatti"
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+lint.extend-select = ["I", "E", "F"]  # isort, pycodestyle, pyflakes
+fix = true
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+addopts = "-ra -q"
+testpaths = ["tests"]

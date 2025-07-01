@@ -1,14 +1,12 @@
 from fastapi.testclient import TestClient
+
 from main import app
 
 client = TestClient(app)
 
-def test_create_and_get_contact():
-    contact = {
-        "name": "Alice",
-        "email": "alice@example.com",
-        "phone": "1234567890"
-    }
+
+def test_create_and_get_contact() -> None:
+    contact = {"name": "Alice", "email": "alice@example.com", "phone": "1234567890"}
 
     # Test POST
     response = client.post("/contacts", json=contact)
