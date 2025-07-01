@@ -1,5 +1,5 @@
 {
-  "repositoryUrl": "git@github.com:username/python-react.git",
+  "repositoryUrl": "git@github.com:sensorario/python-react.git",
   "branches": ["next"],
   "plugins": [
     "@semantic-release/commit-analyzer",
