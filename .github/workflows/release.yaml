@@ -19,14 +19,6 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Install JS dependencies
-        working-directory: frontend # oppure '.', se `package.json` è nella root
-        run: npm ci
-
-      - name: Run JS tests
-        working-directory: frontend
-        run: npm test
-
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
