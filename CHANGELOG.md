@@ -1,3 +1,16 @@
+# [1.1.0](https://github.com/sensorario/python-react/compare/v1.0.0...v1.1.0) (2025-07-01)
+
+
+### Bug Fixes
+
+* **relaserc:** add repositoryUrl ([35e2e93](https://github.com/sensorario/python-react/commit/35e2e93d66d3bbffb39eb1c4e7a482a81afb985e))
+* **setup:** set right username in repository url ([c717283](https://github.com/sensorario/python-react/commit/c717283cf7bc1e8f691387daaa5ca6a077b559b6))
+
+
+### Features
+
+* **setup:** add complete repositoryUrl ([34cbbdd](https://github.com/sensorario/python-react/commit/34cbbdd782ec7baa607e93188769948c78775f86))
+
 # 1.0.0 (2025-07-01)
 
 
