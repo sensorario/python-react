@@ -1,0 +1,47 @@
+python-react/.gitignore
+# Ignore Python compiled files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Ignore virtual environment directories
+venv/
+env/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore node_modules for React
+node_modules/
+
+# Ignore build directories
+build/
+dist/
+
+# Ignore logs
+*.log
+
+# Ignore IDE-specific files
+.idea/
+.vscode/
+
+# Ignore coverage reports
+coverage/
+*.coverage
+
+# Ignore environment variables
+.env
+.env.local
+.env.*.local
+
+# Ignore yarn and npm debug files
+yarn-debug.log*
+npm-debug.log*
+
+# Ignore temporary files
+*.swp
+*.swo
+*.tmp
+*.bak
+*.old
