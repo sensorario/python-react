@@ -1,6 +1,5 @@
 # backend/app/routes.py
 from fastapi import APIRouter
-
 from app.schemas import Contact
 
 router = APIRouter()
@@ -13,7 +12,6 @@ id_counter = 1
 @router.get("/contacts")
 def list_contacts() -> list[Contact]:
     return contacts
-
 
 @router.post("/contacts")
 def create_contact(contact: Contact) -> Contact:
