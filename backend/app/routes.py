@@ -13,7 +13,7 @@ def list_contacts(db: Session = Depends(get_db)):
 
 @router.post("/contacts", response_model=Contact)
 def create_contact(contact: ContactCreate, db: Session = Depends(get_db)):
-    db_contact = models.Contact(**contact.dict())
+    db_contact = models.Contact(**contact.model_dump())
     db.add(db_contact)
     db.commit()
     db.refresh(db_contact)

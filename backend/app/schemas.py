@@ -17,12 +17,10 @@ class ContactUpdate(BaseModel):
     email: Optional[EmailStr] = None
     phone: Optional[str] = None
 
-    class Config:
-        from_attributes = True  # Pydantic v2
+    model_config = {"from_attributes": True}  # Pydantic v2
 
 # Schema per la risposta (GET)
 class Contact(ContactBase):
     id: int
 
-    class Config:
-        from_attributes = True  # Pydantic v2
+    model_config = {"from_attributes": True}  # Pydantic v2

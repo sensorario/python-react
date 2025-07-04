@@ -1,3 +1,5 @@
+import random
+import string
 from fastapi.testclient import TestClient
 
 from main import app
@@ -6,7 +8,11 @@ client = TestClient(app)
 
 
 def test_create_and_get_contact() -> None:
-    contact = {"name": "Alice", "email": "alice@example.com", "phone": "1234567890"}
+    random_email = (
+        ''.join(random.choices(string.ascii_lowercase + string.digits, k=20))
+        + "@example.com"
+    )
+    contact = {"name": "Alice", "email": random_email, "phone": "1234567890"}
 
     # Test POST
     response = client.post("/contacts", json=contact)

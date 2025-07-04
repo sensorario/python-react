@@ -7,8 +7,12 @@ from app.models import Contact
 
 Base.metadata.create_all(bind=engine)
 
+app = FastAPI(
+    title="Rubrica Contatti",
+    description="Python & React",
+    version="1.0.0",
+)
 
-app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
