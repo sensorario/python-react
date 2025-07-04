@@ -12,3 +12,6 @@ typecheck:
 
 test:
 	PYTHONPATH=. pytest ../backend
+
+server:
+	uvicorn main:app --reload

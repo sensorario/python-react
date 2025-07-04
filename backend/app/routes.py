@@ -4,11 +4,21 @@ from app.schemas import Contact, ContactCreate
 from sqlalchemy.orm import Session
 from .database import get_db
 from app import models
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    filename="app.log",               # 📄 Log salvato in questo file
+    format="%(asctime)s - %(levelname)s - %(message)s",  # 🕓 INFO: messaggio
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
+logger = logging.getLogger(__name__)
 
 router = APIRouter()
 
 @router.get("/contacts", response_model=list[Contact])
 def list_contacts(db: Session = Depends(get_db)):
+    logger.info("GET /contacts")
     return db.query(models.Contact).all()
 
 @router.post("/contacts", response_model=Contact)
