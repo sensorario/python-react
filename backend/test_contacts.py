@@ -27,4 +27,4 @@ def test_create_and_get_contact() -> None:
     response = client.get("/contacts")
     assert response.status_code == 200
     contacts = response.json()
-    assert any(c["email"] == "alice@example.com" for c in contacts)
+    assert any(c["email"] == random_email for c in contacts)
