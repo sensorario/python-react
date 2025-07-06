@@ -8,7 +8,7 @@ function App() {
   const [error, setError] = useState(null);
 
   const doSomething = () => {
-    fetch("http://localhost:8000/contacts")
+    fetch("${import.meta.env.VITE_API_URL}/contacts")
       .then((res) => {
         if (!res.ok) throw new Error("Errore nel recupero dei contatti");
         return res.json();
@@ -22,7 +22,9 @@ function App() {
   if (error) return <p>Errore: {error}</p>;
 
   const deleteContact = (id: string) => {
-    fetch(`http://localhost:8000/contacts/${id}`, { method: "DELETE" })
+    fetch(`${import.meta.env.VITE_API_URL}/contacts/${id}`, {
+      method: "DELETE",
+    })
       .then((res) => {
         if (!res.ok) throw new Error("Errore nella cancellazione del contatto");
         return res.json();

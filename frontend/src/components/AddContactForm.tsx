@@ -12,7 +12,7 @@ export default function AddContactForm({
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:8000/contacts", {
+    const response = await fetch("${import.meta.env.VITE_API_URL}/contacts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
